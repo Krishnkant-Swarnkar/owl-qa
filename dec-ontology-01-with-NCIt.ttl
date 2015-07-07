@@ -1,0 +1,1161 @@
+@prefix : <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#> .
+@prefix cde: <http://rdf.cadsr.org/cde#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ncit: <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@base <http://rdf.cadsr.org/cde/> .
+
+<http://rdf.cadsr.org/cde/> rdf:type owl:Ontology ;
+                            
+                            rdfs:label "caDSR Data Element Concept Compositional Ontology" ;
+                            
+                            owl:versionInfo "20150207" ;
+                            
+                            owl:imports <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl> ;
+                            
+                            owl:versionIRI <http://rdf.cadsr.org/cde//version/20150207> .
+
+
+#################################################################
+#
+#    Annotation properties
+#
+#################################################################
+
+
+###  http://www.w3.org/2004/02/skos/core#altLabel
+
+skos:altLabel rdf:type owl:AnnotationProperty .
+
+
+
+###  http://www.w3.org/2004/02/skos/core#prefLabel
+
+skos:prefLabel rdf:type owl:AnnotationProperty .
+
+
+
+
+
+#################################################################
+#
+#    Object Properties
+#
+#################################################################
+
+
+###  http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#measures
+
+:measures rdf:type owl:ObjectProperty ;
+          
+          rdfs:label "measures" ;
+          
+          rdfs:comment "an object class measured by a property." ;
+          
+          skos:prefLabel "measures" ;
+          
+          rdfs:range :DataElementConceptObjectClass ;
+          
+          rdfs:domain :DataElementConceptProperty .
+
+
+
+###  http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#object_class_type
+
+:object_class_type rdf:type owl:ObjectProperty ;
+                   
+                   rdfs:label "object class type" ;
+                   
+                   rdfs:comment "The type of object class that is to measured." ;
+                   
+                   skos:prefLabel "property type" ;
+                   
+                   rdfs:domain :DataElementConceptObjectClass ;
+                   
+                   rdfs:range :PrimaryObjectClass .
+
+
+
+###  http://snomed.info/id/is_about
+
+sct:is_about rdf:type owl:ObjectProperty ;
+             
+             rdfs:label "is about" ;
+             
+             skos:prefLabel "is about" ;
+             
+             rdfs:comment "The quality or process about which the observation is made." ;
+             
+             rdfs:domain :DataElementConcept ;
+             
+             rdfs:range :DataElementConceptProperty .
+
+
+
+###  http://snomed.info/id/704318007
+
+<http://snomed.info/id/704318007> rdf:type owl:ObjectProperty ;
+                                  
+                                  rdfs:label "property type" ;
+                                  
+                                  rdfs:comment "The type of inherent quality or process that is to be observed. Its values are abstract types of quality (length, odor, concentration) or abstract types of process features (rate, speed), and do not include qualities that are located (length of arm, odor of urine), or given a value (elevated concentration)." ;
+                                  
+                                  skos:prefLabel "property type" ;
+                                  
+                                  rdfs:domain :DataElementConceptProperty ;
+                                  
+                                  rdfs:range :PrimaryProperty .
+
+
+
+
+
+#################################################################
+#
+#    Classes
+#
+#################################################################
+
+
+###  http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C15207_C25180
+
+:C15207_C25180 rdf:type owl:Class ;
+               
+               rdfs:label "Clinical Trial Indicator" ;
+               
+               rdfs:subClassOf :C25180 ,
+                               :DataElementConceptProperty .
+
+
+
+###  http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C15368
+
+:C15368 rdf:type owl:Class ;
+        
+        rdfs:subClassOf :DataElementConceptObjectClass ,
+                        :PrimaryObjectClass .
+
+
+
+###  http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C15697
+
+:C15697 rdf:type owl:Class ;
+        
+        rdfs:subClassOf :DataElementConceptObjectClass ,
+                        :PrimaryObjectClass .
+
+
+
+###  http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16124_C15697
+
+:C16124_C15697 rdf:type owl:Class ;
+               
+               rdfs:label "Prior Therapy Treatment Regimen" ;
+               
+               rdfs:subClassOf :C15697 ,
+                               :DataElementConceptObjectClass .
+
+
+
+###  http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C1708
+
+:C1708 rdf:type owl:Class ;
+       
+       rdfs:subClassOf :DataElementConceptObjectClass ,
+                       :PrimaryObjectClass .
+
+
+
+###  http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C1909
+
+:C1909 rdf:type owl:Class ;
+       
+       rdfs:subClassOf :DataElementConceptObjectClass ,
+                       :PrimaryObjectClass .
+
+
+
+###  http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C1909_C25365
+
+:C1909_C25365 rdf:type owl:Class ;
+              
+              rdfs:label "Pharmacologic Substance Description" ;
+              
+              rdfs:subClassOf :C25365 ,
+                              :DataElementConceptProperty .
+
+
+
+###  http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C25161
+
+:C25161 rdf:type owl:Class ;
+        
+        rdfs:subClassOf :DataElementConceptProperty ,
+                        :PrimaryProperty .
+
+
+
+###  http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C25162
+
+:C25162 rdf:type owl:Class ;
+        
+        rdfs:subClassOf :PrimaryProperty .
+
+
+
+###  http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C25169
+
+:C25169 rdf:type owl:Class ;
+        
+        rdfs:subClassOf :DataElementConceptProperty ,
+                        :PrimaryProperty .
+
+
+
+###  http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C25180
+
+:C25180 rdf:type owl:Class ;
+        
+        rdfs:subClassOf :PrimaryProperty .
+
+
+
+###  http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C25256
+
+:C25256 rdf:type owl:Class ;
+        
+        rdfs:subClassOf :DataElementConceptProperty ,
+                        :PrimaryProperty .
+
+
+
+###  http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C25275
+
+:C25275 rdf:type owl:Class ;
+        
+        rdfs:subClassOf :PrimaryProperty .
+
+
+
+###  http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C25304_C25256
+
+:C25304_C25256 rdf:type owl:Class ;
+               
+               rdfs:label "Total Quantity" ;
+               
+               rdfs:subClassOf :C25256 ,
+                               :DataElementConceptProperty .
+
+
+
+###  http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C25304_C25488_C25709_C25162
+
+:C25304_C25488_C25709_C25162 rdf:type owl:Class ;
+                             
+                             rdfs:label "Total Dose Unit of Measure Code" ;
+                             
+                             rdfs:subClassOf :C25162 ,
+                                             :DataElementConceptProperty .
+
+
+
+###  http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C25365
+
+:C25365 rdf:type owl:Class ;
+        
+        rdfs:subClassOf :DataElementConceptProperty ,
+                        :PrimaryProperty .
+
+
+
+###  http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C25379
+
+:C25379 rdf:type owl:Class ;
+        
+        rdfs:subClassOf :DataElementConceptProperty ,
+                        :PrimaryProperty .
+
+
+
+###  http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C25396
+
+:C25396 rdf:type owl:Class ;
+        
+        rdfs:subClassOf :DataElementConceptObjectClass ,
+                        :PrimaryObjectClass .
+
+
+
+###  http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C25431_C25275
+
+:C25431_C25275 rdf:type owl:Class ;
+               
+               rdfs:label "Begin Occurrence" ;
+               
+               rdfs:subClassOf :C25275 ,
+                               :DataElementConceptProperty .
+
+
+
+###  http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C25470_C1708
+
+:C25470_C1708 rdf:type owl:Class ;
+              
+              rdfs:label "Cumulative Agent" ;
+              
+              rdfs:subClassOf :C1708 ,
+                              :DataElementConceptObjectClass .
+
+
+
+###  http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C25496_C25275
+
+:C25496_C25275 rdf:type owl:Class ;
+               
+               rdfs:label "End Occurrence" ;
+               
+               rdfs:subClassOf :C25275 ,
+                               :DataElementConceptProperty .
+
+
+
+###  http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C28180_C1708
+
+:C28180_C1708 rdf:type owl:Class ;
+              
+              rdfs:label "Prescription Agent" ;
+              
+              rdfs:subClassOf :C1708 ,
+                              :DataElementConceptObjectClass .
+
+
+
+###  http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C53279_C25275
+
+:C53279_C25275 rdf:type owl:Class ;
+               
+               rdfs:label "Continue Occurrence" ;
+               
+               rdfs:subClassOf :C25275 ,
+                               :DataElementConceptProperty .
+
+
+
+###  http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C70962
+
+:C70962 rdf:type owl:Class ;
+        
+        rdfs:subClassOf :DataElementConceptObjectClass ,
+                        :PrimaryObjectClass .
+
+
+
+###  http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C71104_C1708
+
+:C71104_C1708 rdf:type owl:Class ;
+              
+              rdfs:label "Clinical Trial Agent" ;
+              
+              rdfs:subClassOf :C1708 ,
+                              :DataElementConceptObjectClass .
+
+
+
+###  http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#DataElementConcept
+
+:DataElementConcept rdf:type owl:Class ;
+                    
+                    rdfs:label "Observable Entity" ;
+                    
+                    skos:prefLabel "Data Element Concept" .
+
+
+
+###  http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#DataElementConceptObjectClass
+
+:DataElementConceptObjectClass rdf:type owl:Class ;
+                               
+                               rdfs:label "Observable Entity Object Class" ;
+                               
+                               skos:prefLabel "Data Element Concept Object Class" .
+
+
+
+###  http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#DataElementConceptProperty
+
+:DataElementConceptProperty rdf:type owl:Class ;
+                            
+                            rdfs:label "Observable Entity Property" ;
+                            
+                            skos:prefLabel "Data Element Concept Property" .
+
+
+
+###  http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#PrimaryObjectClass
+
+:PrimaryObjectClass rdf:type owl:Class ;
+                    
+                    rdfs:label "Primary Object Class" ;
+                    
+                    owl:disjointWith :PrimaryProperty ;
+                    
+                    skos:prefLabel "Property Of Measurement" .
+
+
+
+###  http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#PrimaryProperty
+
+:PrimaryProperty rdf:type owl:Class ;
+                 
+                 rdfs:label "Primary Property" ;
+                 
+                 skos:prefLabel "Property Of Measurement" .
+
+
+
+###  http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#1515
+
+<http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#1515> rdf:type owl:Class ;
+                                                          
+                                                          rdfs:label "Cumulative Agent Total Dose" ;
+                                                          
+                                                          owl:equivalentClass [ rdf:type owl:Class ;
+                                                                                owl:intersectionOf ( :DataElementConcept
+                                                                                                     [ rdf:type owl:Restriction ;
+                                                                                                       owl:onProperty sct:is_about ;
+                                                                                                       owl:someValuesFrom [ rdf:type owl:Class ;
+                                                                                                                            owl:intersectionOf ( :C25304_C25256
+                                                                                                                                                 [ rdf:type owl:Restriction ;
+                                                                                                                                                   owl:onProperty :measures ;
+                                                                                                                                                   owl:someValuesFrom [ rdf:type owl:Class ;
+                                                                                                                                                                        owl:intersectionOf ( :C25470_C1708
+                                                                                                                                                                                             [ rdf:type owl:Restriction ;
+                                                                                                                                                                                               owl:onProperty :object_class_type ;
+                                                                                                                                                                                               owl:someValuesFrom :C1708
+                                                                                                                                                                                             ]
+                                                                                                                                                                                           )
+                                                                                                                                                                      ]
+                                                                                                                                                 ]
+                                                                                                                                                 [ rdf:type owl:Restriction ;
+                                                                                                                                                   owl:onProperty <http://snomed.info/id/704318007> ;
+                                                                                                                                                   owl:someValuesFrom :C25256
+                                                                                                                                                 ]
+                                                                                                                                               )
+                                                                                                                          ]
+                                                                                                     ]
+                                                                                                   )
+                                                                              ] ;
+                                                          
+                                                          rdfs:subClassOf :DataElementConcept ;
+                                                          
+                                                          skos:altLabel "Cumulative Agent Total Quantity" ;
+                                                          
+                                                          skos:prefLabel "Cumulative Agent Total Dose" .
+
+
+
+###  http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#2001762
+
+<http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#2001762> rdf:type owl:Class ;
+                                                             
+                                                             rdfs:label "Treatment Description Text" ;
+                                                             
+                                                             owl:equivalentClass [ rdf:type owl:Class ;
+                                                                                   owl:intersectionOf ( :DataElementConcept
+                                                                                                        [ rdf:type owl:Restriction ;
+                                                                                                          owl:onProperty sct:is_about ;
+                                                                                                          owl:someValuesFrom [ rdf:type owl:Class ;
+                                                                                                                               owl:intersectionOf ( :C25365
+                                                                                                                                                    [ rdf:type owl:Restriction ;
+                                                                                                                                                      owl:onProperty :measures ;
+                                                                                                                                                      owl:someValuesFrom [ rdf:type owl:Class ;
+                                                                                                                                                                           owl:intersectionOf ( :C15368
+                                                                                                                                                                                                [ rdf:type owl:Restriction ;
+                                                                                                                                                                                                  owl:onProperty :object_class_type ;
+                                                                                                                                                                                                  owl:someValuesFrom :C15368
+                                                                                                                                                                                                ]
+                                                                                                                                                                                              )
+                                                                                                                                                                         ]
+                                                                                                                                                    ]
+                                                                                                                                                    [ rdf:type owl:Restriction ;
+                                                                                                                                                      owl:onProperty <http://snomed.info/id/704318007> ;
+                                                                                                                                                      owl:someValuesFrom :C25365
+                                                                                                                                                    ]
+                                                                                                                                                  )
+                                                                                                                             ]
+                                                                                                        ]
+                                                                                                      )
+                                                                                 ] ;
+                                                             
+                                                             rdfs:subClassOf :DataElementConcept ;
+                                                             
+                                                             skos:prefLabel "Treatment Description Text" ;
+                                                             
+                                                             skos:altLabel "Treatment Description" .
+
+
+
+###  http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#2003586
+
+<http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#2003586> rdf:type owl:Class ;
+                                                             
+                                                             rdfs:label "Access Route of Administration Text Code" ;
+                                                             
+                                                             owl:equivalentClass [ rdf:type owl:Class ;
+                                                                                   owl:intersectionOf ( :DataElementConcept
+                                                                                                        [ rdf:type owl:Restriction ;
+                                                                                                          owl:onProperty sct:is_about ;
+                                                                                                          owl:someValuesFrom [ rdf:type owl:Class ;
+                                                                                                                               owl:intersectionOf ( :C25169
+                                                                                                                                                    [ rdf:type owl:Restriction ;
+                                                                                                                                                      owl:onProperty :measures ;
+                                                                                                                                                      owl:someValuesFrom [ rdf:type owl:Class ;
+                                                                                                                                                                           owl:intersectionOf ( :C25396
+                                                                                                                                                                                                [ rdf:type owl:Restriction ;
+                                                                                                                                                                                                  owl:onProperty :object_class_type ;
+                                                                                                                                                                                                  owl:someValuesFrom :C25396
+                                                                                                                                                                                                ]
+                                                                                                                                                                                              )
+                                                                                                                                                                         ]
+                                                                                                                                                    ]
+                                                                                                                                                    [ rdf:type owl:Restriction ;
+                                                                                                                                                      owl:onProperty <http://snomed.info/id/704318007> ;
+                                                                                                                                                      owl:someValuesFrom :C25169
+                                                                                                                                                    ]
+                                                                                                                                                  )
+                                                                                                                             ]
+                                                                                                        ]
+                                                                                                      )
+                                                                                 ] ;
+                                                             
+                                                             rdfs:subClassOf :DataElementConcept ;
+                                                             
+                                                             skos:altLabel "Access Route" ;
+                                                             
+                                                             skos:prefLabel "Access Route of Administration Text Code" .
+
+
+
+###  http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#2184728
+
+<http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#2184728> rdf:type owl:Class ;
+                                                             
+                                                             rdfs:label "Prescribed Agent Dose" ;
+                                                             
+                                                             owl:equivalentClass [ rdf:type owl:Class ;
+                                                                                   owl:intersectionOf ( :DataElementConcept
+                                                                                                        [ rdf:type owl:Restriction ;
+                                                                                                          owl:onProperty sct:is_about ;
+                                                                                                          owl:someValuesFrom [ rdf:type owl:Class ;
+                                                                                                                               owl:intersectionOf ( :C25256
+                                                                                                                                                    [ rdf:type owl:Restriction ;
+                                                                                                                                                      owl:onProperty :measures ;
+                                                                                                                                                      owl:someValuesFrom [ rdf:type owl:Class ;
+                                                                                                                                                                           owl:intersectionOf ( :C28180_C1708
+                                                                                                                                                                                                [ rdf:type owl:Restriction ;
+                                                                                                                                                                                                  owl:onProperty :object_class_type ;
+                                                                                                                                                                                                  owl:someValuesFrom :C1708
+                                                                                                                                                                                                ]
+                                                                                                                                                                                              )
+                                                                                                                                                                         ]
+                                                                                                                                                    ]
+                                                                                                                                                    [ rdf:type owl:Restriction ;
+                                                                                                                                                      owl:onProperty <http://snomed.info/id/704318007> ;
+                                                                                                                                                      owl:someValuesFrom :C25256
+                                                                                                                                                    ]
+                                                                                                                                                  )
+                                                                                                                             ]
+                                                                                                        ]
+                                                                                                      )
+                                                                                 ] ;
+                                                             
+                                                             rdfs:subClassOf :DataElementConcept ;
+                                                             
+                                                             skos:altLabel "Prescription Agent Quantity" ;
+                                                             
+                                                             skos:prefLabel "Prescribed Agent Dose" .
+
+
+
+###  http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#2503808
+
+<http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#2503808> rdf:type owl:Class ;
+                                                             
+                                                             rdfs:label "Treatment Clinical Trial Indicator" ;
+                                                             
+                                                             owl:equivalentClass [ rdf:type owl:Class ;
+                                                                                   owl:intersectionOf ( :DataElementConcept
+                                                                                                        [ rdf:type owl:Restriction ;
+                                                                                                          owl:onProperty sct:is_about ;
+                                                                                                          owl:someValuesFrom [ rdf:type owl:Class ;
+                                                                                                                               owl:intersectionOf ( :C15207_C25180
+                                                                                                                                                    [ rdf:type owl:Restriction ;
+                                                                                                                                                      owl:onProperty :measures ;
+                                                                                                                                                      owl:someValuesFrom [ rdf:type owl:Class ;
+                                                                                                                                                                           owl:intersectionOf ( :C15368
+                                                                                                                                                                                                [ rdf:type owl:Restriction ;
+                                                                                                                                                                                                  owl:onProperty :object_class_type ;
+                                                                                                                                                                                                  owl:someValuesFrom :C15368
+                                                                                                                                                                                                ]
+                                                                                                                                                                                              )
+                                                                                                                                                                         ]
+                                                                                                                                                    ]
+                                                                                                                                                    [ rdf:type owl:Restriction ;
+                                                                                                                                                      owl:onProperty <http://snomed.info/id/704318007> ;
+                                                                                                                                                      owl:someValuesFrom :C25180
+                                                                                                                                                    ]
+                                                                                                                                                  )
+                                                                                                                             ]
+                                                                                                        ]
+                                                                                                      )
+                                                                                 ] ;
+                                                             
+                                                             rdfs:subClassOf :DataElementConcept ;
+                                                             
+                                                             skos:altLabel "Treatment Clinical Trial Indicator" ;
+                                                             
+                                                             skos:prefLabel "Treatment Clinical Trial Indicator" .
+
+
+
+###  http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#2793530
+
+<http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#2793530> rdf:type owl:Class ;
+                                                             
+                                                             rdfs:label "Treatment Regimen Pharmacologic Substance Type" ;
+                                                             
+                                                             owl:equivalentClass [ rdf:type owl:Class ;
+                                                                                   owl:intersectionOf ( :DataElementConcept
+                                                                                                        [ rdf:type owl:Restriction ;
+                                                                                                          owl:onProperty sct:is_about ;
+                                                                                                          owl:someValuesFrom [ rdf:type owl:Class ;
+                                                                                                                               owl:intersectionOf ( :C1909_C25365
+                                                                                                                                                    [ rdf:type owl:Restriction ;
+                                                                                                                                                      owl:onProperty :measures ;
+                                                                                                                                                      owl:someValuesFrom [ rdf:type owl:Class ;
+                                                                                                                                                                           owl:intersectionOf ( :C15697
+                                                                                                                                                                                                [ rdf:type owl:Restriction ;
+                                                                                                                                                                                                  owl:onProperty :object_class_type ;
+                                                                                                                                                                                                  owl:someValuesFrom :C15697
+                                                                                                                                                                                                ]
+                                                                                                                                                                                              )
+                                                                                                                                                                         ]
+                                                                                                                                                    ]
+                                                                                                                                                    [ rdf:type owl:Restriction ;
+                                                                                                                                                      owl:onProperty <http://snomed.info/id/704318007> ;
+                                                                                                                                                      owl:someValuesFrom :C25365
+                                                                                                                                                    ]
+                                                                                                                                                  )
+                                                                                                                             ]
+                                                                                                        ]
+                                                                                                      )
+                                                                                 ] ;
+                                                             
+                                                             rdfs:subClassOf :DataElementConcept ;
+                                                             
+                                                             skos:altLabel "Treatment Regimen Pharmacologic Substance Description" ;
+                                                             
+                                                             skos:prefLabel "Treatment Regimen Pharmacologic Substance Type" .
+
+
+
+###  http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#2975232
+
+<http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#2975232> rdf:type owl:Class ;
+                                                             
+                                                             rdfs:label "Prior Therapy Regimen Text" ;
+                                                             
+                                                             owl:equivalentClass [ rdf:type owl:Class ;
+                                                                                   owl:intersectionOf ( :DataElementConcept
+                                                                                                        [ rdf:type owl:Restriction ;
+                                                                                                          owl:onProperty sct:is_about ;
+                                                                                                          owl:someValuesFrom [ rdf:type owl:Class ;
+                                                                                                                               owl:intersectionOf ( :C1708
+                                                                                                                                                    [ rdf:type owl:Restriction ;
+                                                                                                                                                      owl:onProperty :measures ;
+                                                                                                                                                      owl:someValuesFrom [ rdf:type owl:Class ;
+                                                                                                                                                                           owl:intersectionOf ( :C16124_C15697
+                                                                                                                                                                                                [ rdf:type owl:Restriction ;
+                                                                                                                                                                                                  owl:onProperty :object_class_type ;
+                                                                                                                                                                                                  owl:someValuesFrom :C15697
+                                                                                                                                                                                                ]
+                                                                                                                                                                                              )
+                                                                                                                                                                         ]
+                                                                                                                                                    ]
+                                                                                                                                                    [ rdf:type owl:Restriction ;
+                                                                                                                                                      owl:onProperty <http://snomed.info/id/704318007> ;
+                                                                                                                                                      owl:someValuesFrom :C1708
+                                                                                                                                                    ]
+                                                                                                                                                  )
+                                                                                                                             ]
+                                                                                                        ]
+                                                                                                      )
+                                                                                 ] ;
+                                                             
+                                                             rdfs:subClassOf :DataElementConcept ;
+                                                             
+                                                             skos:altLabel "Prior Therapy Treatment Regimen Agent" ;
+                                                             
+                                                             skos:prefLabel "Prior Therapy Regimen Text" .
+
+
+
+###  http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#3065815
+
+<http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#3065815> rdf:type owl:Class ;
+                                                             
+                                                             rdfs:label "Prescription Agent Quantity Dose Code" ;
+                                                             
+                                                             owl:equivalentClass [ rdf:type owl:Class ;
+                                                                                   owl:intersectionOf ( :DataElementConcept
+                                                                                                        [ rdf:type owl:Restriction ;
+                                                                                                          owl:onProperty sct:is_about ;
+                                                                                                          owl:someValuesFrom [ rdf:type owl:Class ;
+                                                                                                                               owl:intersectionOf ( :C25256
+                                                                                                                                                    [ rdf:type owl:Restriction ;
+                                                                                                                                                      owl:onProperty :measures ;
+                                                                                                                                                      owl:someValuesFrom [ rdf:type owl:Class ;
+                                                                                                                                                                           owl:intersectionOf ( :C28180_C1708
+                                                                                                                                                                                                [ rdf:type owl:Restriction ;
+                                                                                                                                                                                                  owl:onProperty :object_class_type ;
+                                                                                                                                                                                                  owl:someValuesFrom :C1708
+                                                                                                                                                                                                ]
+                                                                                                                                                                                              )
+                                                                                                                                                                         ]
+                                                                                                                                                    ]
+                                                                                                                                                    [ rdf:type owl:Restriction ;
+                                                                                                                                                      owl:onProperty <http://snomed.info/id/704318007> ;
+                                                                                                                                                      owl:someValuesFrom :C25256
+                                                                                                                                                    ]
+                                                                                                                                                  )
+                                                                                                                             ]
+                                                                                                        ]
+                                                                                                      )
+                                                                                 ] ;
+                                                             
+                                                             rdfs:subClassOf :DataElementConcept ;
+                                                             
+                                                             skos:altLabel "Prescription Agent Quantity" ;
+                                                             
+                                                             skos:prefLabel "Prescription Agent Quantity Dose Code" .
+
+
+
+###  http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#3088785
+
+<http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#3088785> rdf:type owl:Class ;
+                                                             
+                                                             rdfs:label "Agent Administration Total Dose Code" ;
+                                                             
+                                                             owl:equivalentClass [ rdf:type owl:Class ;
+                                                                                   owl:intersectionOf ( :DataElementConcept
+                                                                                                        [ rdf:type owl:Restriction ;
+                                                                                                          owl:onProperty sct:is_about ;
+                                                                                                          owl:someValuesFrom [ rdf:type owl:Class ;
+                                                                                                                               owl:intersectionOf ( :C25304_C25488_C25709_C25162
+                                                                                                                                                    [ rdf:type owl:Restriction ;
+                                                                                                                                                      owl:onProperty :measures ;
+                                                                                                                                                      owl:someValuesFrom [ rdf:type owl:Class ;
+                                                                                                                                                                           owl:intersectionOf ( :C70962
+                                                                                                                                                                                                [ rdf:type owl:Restriction ;
+                                                                                                                                                                                                  owl:onProperty :object_class_type ;
+                                                                                                                                                                                                  owl:someValuesFrom :C70962
+                                                                                                                                                                                                ]
+                                                                                                                                                                                              )
+                                                                                                                                                                         ]
+                                                                                                                                                    ]
+                                                                                                                                                    [ rdf:type owl:Restriction ;
+                                                                                                                                                      owl:onProperty <http://snomed.info/id/704318007> ;
+                                                                                                                                                      owl:someValuesFrom :C25162
+                                                                                                                                                    ]
+                                                                                                                                                  )
+                                                                                                                             ]
+                                                                                                        ]
+                                                                                                      )
+                                                                                 ] ;
+                                                             
+                                                             rdfs:subClassOf :DataElementConcept ;
+                                                             
+                                                             skos:altLabel "Agent Administration Total Dose Unit of Measure Code" ;
+                                                             
+                                                             skos:prefLabel "Agent Administration Total Dose Code" .
+
+
+
+###  http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#3103070
+
+<http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#3103070> rdf:type owl:Class ;
+                                                             
+                                                             rdfs:label "Pharmacologic Substance Begin Occurrence Day Number" ;
+                                                             
+                                                             owl:equivalentClass [ rdf:type owl:Class ;
+                                                                                   owl:intersectionOf ( :DataElementConcept
+                                                                                                        [ rdf:type owl:Restriction ;
+                                                                                                          owl:onProperty sct:is_about ;
+                                                                                                          owl:someValuesFrom [ rdf:type owl:Class ;
+                                                                                                                               owl:intersectionOf ( :C25431_C25275
+                                                                                                                                                    [ rdf:type owl:Restriction ;
+                                                                                                                                                      owl:onProperty :measures ;
+                                                                                                                                                      owl:someValuesFrom [ rdf:type owl:Class ;
+                                                                                                                                                                           owl:intersectionOf ( :C1909
+                                                                                                                                                                                                [ rdf:type owl:Restriction ;
+                                                                                                                                                                                                  owl:onProperty :object_class_type ;
+                                                                                                                                                                                                  owl:someValuesFrom :C1909
+                                                                                                                                                                                                ]
+                                                                                                                                                                                              )
+                                                                                                                                                                         ]
+                                                                                                                                                    ]
+                                                                                                                                                    [ rdf:type owl:Restriction ;
+                                                                                                                                                      owl:onProperty <http://snomed.info/id/704318007> ;
+                                                                                                                                                      owl:someValuesFrom :C25275
+                                                                                                                                                    ]
+                                                                                                                                                  )
+                                                                                                                             ]
+                                                                                                        ]
+                                                                                                      )
+                                                                                 ] ;
+                                                             
+                                                             rdfs:subClassOf :DataElementConcept ;
+                                                             
+                                                             skos:prefLabel "Pharmacologic Substance Begin Occurrence Day Number" ;
+                                                             
+                                                             skos:altLabel "Pharmacologic Substance Begin Occurrence" .
+
+
+
+###  http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#3103072
+
+<http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#3103072> rdf:type owl:Class ;
+                                                             
+                                                             rdfs:label "Pharmacologic Substance Begin Occurrence Month Number" ;
+                                                             
+                                                             owl:equivalentClass [ rdf:type owl:Class ;
+                                                                                   owl:intersectionOf ( :DataElementConcept
+                                                                                                        [ rdf:type owl:Restriction ;
+                                                                                                          owl:onProperty sct:is_about ;
+                                                                                                          owl:someValuesFrom [ rdf:type owl:Class ;
+                                                                                                                               owl:intersectionOf ( :C25431_C25275
+                                                                                                                                                    [ rdf:type owl:Restriction ;
+                                                                                                                                                      owl:onProperty :measures ;
+                                                                                                                                                      owl:someValuesFrom [ rdf:type owl:Class ;
+                                                                                                                                                                           owl:intersectionOf ( :C1909
+                                                                                                                                                                                                [ rdf:type owl:Restriction ;
+                                                                                                                                                                                                  owl:onProperty :object_class_type ;
+                                                                                                                                                                                                  owl:someValuesFrom :C1909
+                                                                                                                                                                                                ]
+                                                                                                                                                                                              )
+                                                                                                                                                                         ]
+                                                                                                                                                    ]
+                                                                                                                                                    [ rdf:type owl:Restriction ;
+                                                                                                                                                      owl:onProperty <http://snomed.info/id/704318007> ;
+                                                                                                                                                      owl:someValuesFrom :C25275
+                                                                                                                                                    ]
+                                                                                                                                                  )
+                                                                                                                             ]
+                                                                                                        ]
+                                                                                                      )
+                                                                                 ] ;
+                                                             
+                                                             rdfs:subClassOf :DataElementConcept ;
+                                                             
+                                                             skos:prefLabel "Pharmacologic Substance Begin Occurrence Month Number" ;
+                                                             
+                                                             skos:altLabel "Pharmacologic Substance Begin Occurrence" .
+
+
+
+###  http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#3103074
+
+<http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#3103074> rdf:type owl:Class ;
+                                                             
+                                                             rdfs:label "Pharmacologic Substance Begin Occurrence Year Number" ;
+                                                             
+                                                             owl:equivalentClass [ rdf:type owl:Class ;
+                                                                                   owl:intersectionOf ( :DataElementConcept
+                                                                                                        [ rdf:type owl:Restriction ;
+                                                                                                          owl:onProperty sct:is_about ;
+                                                                                                          owl:someValuesFrom [ rdf:type owl:Class ;
+                                                                                                                               owl:intersectionOf ( :C25431_C25275
+                                                                                                                                                    [ rdf:type owl:Restriction ;
+                                                                                                                                                      owl:onProperty :measures ;
+                                                                                                                                                      owl:someValuesFrom [ rdf:type owl:Class ;
+                                                                                                                                                                           owl:intersectionOf ( :C1909
+                                                                                                                                                                                                [ rdf:type owl:Restriction ;
+                                                                                                                                                                                                  owl:onProperty :object_class_type ;
+                                                                                                                                                                                                  owl:someValuesFrom :C1909
+                                                                                                                                                                                                ]
+                                                                                                                                                                                              )
+                                                                                                                                                                         ]
+                                                                                                                                                    ]
+                                                                                                                                                    [ rdf:type owl:Restriction ;
+                                                                                                                                                      owl:onProperty <http://snomed.info/id/704318007> ;
+                                                                                                                                                      owl:someValuesFrom :C25275
+                                                                                                                                                    ]
+                                                                                                                                                  )
+                                                                                                                             ]
+                                                                                                        ]
+                                                                                                      )
+                                                                                 ] ;
+                                                             
+                                                             rdfs:subClassOf :DataElementConcept ;
+                                                             
+                                                             skos:altLabel "Pharmacologic Substance Begin Occurrence" ;
+                                                             
+                                                             skos:prefLabel "Pharmacologic Substance Begin Occurrence Year Number" .
+
+
+
+###  http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#3103078
+
+<http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#3103078> rdf:type owl:Class ;
+                                                             
+                                                             rdfs:label "Pharmacologic Substance End Occurrence Day Number" ;
+                                                             
+                                                             owl:equivalentClass [ rdf:type owl:Class ;
+                                                                                   owl:intersectionOf ( :DataElementConcept
+                                                                                                        [ rdf:type owl:Restriction ;
+                                                                                                          owl:onProperty sct:is_about ;
+                                                                                                          owl:someValuesFrom [ rdf:type owl:Class ;
+                                                                                                                               owl:intersectionOf ( :C25496_C25275
+                                                                                                                                                    [ rdf:type owl:Restriction ;
+                                                                                                                                                      owl:onProperty :measures ;
+                                                                                                                                                      owl:someValuesFrom [ rdf:type owl:Class ;
+                                                                                                                                                                           owl:intersectionOf ( :C1909
+                                                                                                                                                                                                [ rdf:type owl:Restriction ;
+                                                                                                                                                                                                  owl:onProperty :object_class_type ;
+                                                                                                                                                                                                  owl:someValuesFrom :C1909
+                                                                                                                                                                                                ]
+                                                                                                                                                                                              )
+                                                                                                                                                                         ]
+                                                                                                                                                    ]
+                                                                                                                                                    [ rdf:type owl:Restriction ;
+                                                                                                                                                      owl:onProperty <http://snomed.info/id/704318007> ;
+                                                                                                                                                      owl:someValuesFrom :C25275
+                                                                                                                                                    ]
+                                                                                                                                                  )
+                                                                                                                             ]
+                                                                                                        ]
+                                                                                                      )
+                                                                                 ] ;
+                                                             
+                                                             rdfs:subClassOf :DataElementConcept ;
+                                                             
+                                                             skos:altLabel "Pharmacologic Substance End Occurrence" ;
+                                                             
+                                                             skos:prefLabel "Pharmacologic Substance End Occurrence Day Number" .
+
+
+
+###  http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#3103080
+
+<http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#3103080> rdf:type owl:Class ;
+                                                             
+                                                             rdfs:label "Pharmacologic Substance End Occurrence Month Number" ;
+                                                             
+                                                             owl:equivalentClass [ rdf:type owl:Class ;
+                                                                                   owl:intersectionOf ( :DataElementConcept
+                                                                                                        [ rdf:type owl:Restriction ;
+                                                                                                          owl:onProperty sct:is_about ;
+                                                                                                          owl:someValuesFrom [ rdf:type owl:Class ;
+                                                                                                                               owl:intersectionOf ( :C25496_C25275
+                                                                                                                                                    [ rdf:type owl:Restriction ;
+                                                                                                                                                      owl:onProperty :measures ;
+                                                                                                                                                      owl:someValuesFrom [ rdf:type owl:Class ;
+                                                                                                                                                                           owl:intersectionOf ( :C1909
+                                                                                                                                                                                                [ rdf:type owl:Restriction ;
+                                                                                                                                                                                                  owl:onProperty :object_class_type ;
+                                                                                                                                                                                                  owl:someValuesFrom :C1909
+                                                                                                                                                                                                ]
+                                                                                                                                                                                              )
+                                                                                                                                                                         ]
+                                                                                                                                                    ]
+                                                                                                                                                    [ rdf:type owl:Restriction ;
+                                                                                                                                                      owl:onProperty <http://snomed.info/id/704318007> ;
+                                                                                                                                                      owl:someValuesFrom :C25275
+                                                                                                                                                    ]
+                                                                                                                                                  )
+                                                                                                                             ]
+                                                                                                        ]
+                                                                                                      )
+                                                                                 ] ;
+                                                             
+                                                             rdfs:subClassOf :DataElementConcept ;
+                                                             
+                                                             skos:altLabel "Pharmacologic Substance End Occurrence" ;
+                                                             
+                                                             skos:prefLabel "Pharmacologic Substance End Occurrence Month Number" .
+
+
+
+###  http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#3103082
+
+<http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#3103082> rdf:type owl:Class ;
+                                                             
+                                                             rdfs:label "Pharmacologic Substance End Occurrence Year Number" ;
+                                                             
+                                                             owl:equivalentClass [ rdf:type owl:Class ;
+                                                                                   owl:intersectionOf ( :DataElementConcept
+                                                                                                        [ rdf:type owl:Restriction ;
+                                                                                                          owl:onProperty sct:is_about ;
+                                                                                                          owl:someValuesFrom [ rdf:type owl:Class ;
+                                                                                                                               owl:intersectionOf ( :C25496_C25275
+                                                                                                                                                    [ rdf:type owl:Restriction ;
+                                                                                                                                                      owl:onProperty :measures ;
+                                                                                                                                                      owl:someValuesFrom [ rdf:type owl:Class ;
+                                                                                                                                                                           owl:intersectionOf ( :C1909
+                                                                                                                                                                                                [ rdf:type owl:Restriction ;
+                                                                                                                                                                                                  owl:onProperty :object_class_type ;
+                                                                                                                                                                                                  owl:someValuesFrom :C1909
+                                                                                                                                                                                                ]
+                                                                                                                                                                                              )
+                                                                                                                                                                         ]
+                                                                                                                                                    ]
+                                                                                                                                                    [ rdf:type owl:Restriction ;
+                                                                                                                                                      owl:onProperty <http://snomed.info/id/704318007> ;
+                                                                                                                                                      owl:someValuesFrom :C25275
+                                                                                                                                                    ]
+                                                                                                                                                  )
+                                                                                                                             ]
+                                                                                                        ]
+                                                                                                      )
+                                                                                 ] ;
+                                                             
+                                                             rdfs:subClassOf :DataElementConcept ;
+                                                             
+                                                             skos:prefLabel "Pharmacologic Substance End Occurrence Year Number" ;
+                                                             
+                                                             skos:altLabel "Pharmacologic Substance End Occurrence" .
+
+
+
+###  http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#3103479
+
+<http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#3103479> rdf:type owl:Class ;
+                                                             
+                                                             rdfs:label "Pharmacologic Substance Continue Occurrence Indicator" ;
+                                                             
+                                                             owl:equivalentClass [ rdf:type owl:Class ;
+                                                                                   owl:intersectionOf ( :DataElementConcept
+                                                                                                        [ rdf:type owl:Restriction ;
+                                                                                                          owl:onProperty sct:is_about ;
+                                                                                                          owl:someValuesFrom [ rdf:type owl:Class ;
+                                                                                                                               owl:intersectionOf ( :C53279_C25275
+                                                                                                                                                    [ rdf:type owl:Restriction ;
+                                                                                                                                                      owl:onProperty :measures ;
+                                                                                                                                                      owl:someValuesFrom [ rdf:type owl:Class ;
+                                                                                                                                                                           owl:intersectionOf ( :C1909
+                                                                                                                                                                                                [ rdf:type owl:Restriction ;
+                                                                                                                                                                                                  owl:onProperty :object_class_type ;
+                                                                                                                                                                                                  owl:someValuesFrom :C1909
+                                                                                                                                                                                                ]
+                                                                                                                                                                                              )
+                                                                                                                                                                         ]
+                                                                                                                                                    ]
+                                                                                                                                                    [ rdf:type owl:Restriction ;
+                                                                                                                                                      owl:onProperty <http://snomed.info/id/704318007> ;
+                                                                                                                                                      owl:someValuesFrom :C25275
+                                                                                                                                                    ]
+                                                                                                                                                  )
+                                                                                                                             ]
+                                                                                                        ]
+                                                                                                      )
+                                                                                 ] ;
+                                                             
+                                                             rdfs:subClassOf :DataElementConcept ;
+                                                             
+                                                             skos:altLabel "Pharmacologic Substance Continue Occurrence" ;
+                                                             
+                                                             skos:prefLabel "Pharmacologic Substance Continue Occurrence Indicator" .
+
+
+
+###  http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#3378323
+
+<http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#3378323> rdf:type owl:Class ;
+                                                             
+                                                             rdfs:label "Clinical Trial Drug Classification Name" ;
+                                                             
+                                                             owl:equivalentClass [ rdf:type owl:Class ;
+                                                                                   owl:intersectionOf ( :DataElementConcept
+                                                                                                        [ rdf:type owl:Restriction ;
+                                                                                                          owl:onProperty sct:is_about ;
+                                                                                                          owl:someValuesFrom [ rdf:type owl:Class ;
+                                                                                                                               owl:intersectionOf ( :C25161
+                                                                                                                                                    [ rdf:type owl:Restriction ;
+                                                                                                                                                      owl:onProperty :measures ;
+                                                                                                                                                      owl:someValuesFrom [ rdf:type owl:Class ;
+                                                                                                                                                                           owl:intersectionOf ( :C71104_C1708
+                                                                                                                                                                                                [ rdf:type owl:Restriction ;
+                                                                                                                                                                                                  owl:onProperty :object_class_type ;
+                                                                                                                                                                                                  owl:someValuesFrom :C1708
+                                                                                                                                                                                                ]
+                                                                                                                                                                                              )
+                                                                                                                                                                         ]
+                                                                                                                                                    ]
+                                                                                                                                                    [ rdf:type owl:Restriction ;
+                                                                                                                                                      owl:onProperty <http://snomed.info/id/704318007> ;
+                                                                                                                                                      owl:someValuesFrom :C25161
+                                                                                                                                                    ]
+                                                                                                                                                  )
+                                                                                                                             ]
+                                                                                                        ]
+                                                                                                      )
+                                                                                 ] ;
+                                                             
+                                                             rdfs:subClassOf :DataElementConcept ;
+                                                             
+                                                             skos:prefLabel "Clinical Trial Drug Classification Name" ;
+                                                             
+                                                             skos:altLabel "Clinical Trial Drug Classification" .
+
+
+
+###  http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#62590
+
+<http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#62590> rdf:type owl:Class ;
+                                                           
+                                                           rdfs:label "Agent Course Count" ;
+                                                           
+                                                           owl:equivalentClass [ rdf:type owl:Class ;
+                                                                                 owl:intersectionOf ( :DataElementConcept
+                                                                                                      [ rdf:type owl:Restriction ;
+                                                                                                        owl:onProperty sct:is_about ;
+                                                                                                        owl:someValuesFrom [ rdf:type owl:Class ;
+                                                                                                                             owl:intersectionOf ( :C25379
+                                                                                                                                                  [ rdf:type owl:Restriction ;
+                                                                                                                                                    owl:onProperty :measures ;
+                                                                                                                                                    owl:someValuesFrom [ rdf:type owl:Class ;
+                                                                                                                                                                         owl:intersectionOf ( :C1708
+                                                                                                                                                                                              [ rdf:type owl:Restriction ;
+                                                                                                                                                                                                owl:onProperty :object_class_type ;
+                                                                                                                                                                                                owl:someValuesFrom :C1708
+                                                                                                                                                                                              ]
+                                                                                                                                                                                            )
+                                                                                                                                                                       ]
+                                                                                                                                                  ]
+                                                                                                                                                  [ rdf:type owl:Restriction ;
+                                                                                                                                                    owl:onProperty <http://snomed.info/id/704318007> ;
+                                                                                                                                                    owl:someValuesFrom :C25379
+                                                                                                                                                  ]
+                                                                                                                                                )
+                                                                                                                           ]
+                                                                                                      ]
+                                                                                                    )
+                                                                               ] ;
+                                                           
+                                                           rdfs:subClassOf :DataElementConcept ;
+                                                           
+                                                           skos:prefLabel "Agent Course Count" ;
+                                                           
+                                                           skos:altLabel "Agent Course" .
+
+
+
+
+###  Generated by the OWL API (version 3.5.0) http://owlapi.sourceforge.net
+
