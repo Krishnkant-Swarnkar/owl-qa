@@ -16,7 +16,7 @@ https://github.com/caCDE-QA/owl-qa/blob/master/dec-ontology-02-with-NCIt.ttl (wi
 
 To detect modeling errors, 
 
-1) load one of the OWL files into a Protege 5 Ontology Editing environment (http://protege.stanford.edu/) and ;
+1) load one of the OWL files into an Protege 5 Ontology Editing environment (http://protege.stanford.edu/) and ;
 
 2) invoke the reasoning services from a DL-based resoner (eg., HermIT)
 
