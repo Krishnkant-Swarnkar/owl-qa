@@ -380,6 +380,8 @@ sct:is_about rdf:type owl:ObjectProperty ;
                                
                                rdfs:label "Observable Entity Object Class" ;
                                
+                               owl:disjointWith :DataElementConceptProperty ;
+                               
                                skos:prefLabel "Data Element Concept Object Class" .
 
 
