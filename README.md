@@ -1,6 +1,11 @@
 # owl-qa
 An OWL-based QA tool using a post-coordination approach
 
+## Publications
+* Jiang G, Solbrig HR, Prud'hommeaux E, Tao C, Weng C, Chute CG. Quality Assurance of Cancer Study Common Data Elements Using A Post-Coordination Approach. AMIA Annu Symp Proc. 2015 Nov 5;2015:659-68. eCollection 2015. http://www.ncbi.nlm.nih.gov/pubmed/26958201
+
+
+
 ## Case study of CDEs from two TCGA cancer genome study domains
 OWL rendering of CDEs in the domain Clinical Pharmaceutical
 
