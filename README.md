@@ -3,6 +3,8 @@ An OWL-based QA tool using a post-coordination approach
 
 ## System Architecture
 
+![alt tag]( owl-qa/system-architecture.jpg )
+
 ## Publications
 * Jiang G, Solbrig HR, Prud'hommeaux E, Tao C, Weng C, Chute CG. Quality Assurance of Cancer Study Common Data Elements Using A Post-Coordination Approach. AMIA Annu Symp Proc. 2015 Nov 5;2015:659-68. eCollection 2015. http://www.ncbi.nlm.nih.gov/pubmed/26958201
 
